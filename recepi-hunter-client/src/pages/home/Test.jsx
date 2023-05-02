@@ -54,7 +54,7 @@ const Test = () => {
                                   <div className="eltdf-team-social-holder">
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://www.facebook.com/qodeinteractive/"
@@ -65,11 +65,11 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_facebook eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://twitter.com/qodeinteractive/"
@@ -80,11 +80,11 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_twitter eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://www.linkedin.com/company/qode-themes/"
@@ -95,7 +95,7 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_linkedin eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                   </div>
                                 </div>
@@ -142,7 +142,7 @@ const Test = () => {
                                   <div className="eltdf-team-social-holder">
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://www.facebook.com/qodeinteractive/"
@@ -153,11 +153,11 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_facebook eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://twitter.com/qodeinteractive/"
@@ -168,9 +168,9 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_twitter eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
-                                    <span className="eltdf-team-icon">
+                                    {/* <span className="eltdf-team-icon">
                                       {" "}
                                       <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
@@ -184,7 +184,7 @@ const Test = () => {
                                           ></span>{" "}
                                         </a>
                                       </span>
-                                    </span>
+                                    </span> */}
                                   </div>
                                 </div>
                               </div>
@@ -232,7 +232,7 @@ const Test = () => {
                                   <div className="eltdf-team-social-holder">
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://www.facebook.com/qodeinteractive/"
@@ -243,11 +243,11 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_facebook eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://twitter.com/qodeinteractive/"
@@ -258,11 +258,11 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_twitter eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                     <span className="eltdf-team-icon">
                                       {" "}
-                                      <span className="eltdf-icon-shortcode eltdf-normal   ">
+                                      {/* <span className="eltdf-icon-shortcode eltdf-normal   ">
                                         <a
                                           className=""
                                           href="https://www.linkedin.com/company/qode-themes/"
@@ -273,7 +273,7 @@ const Test = () => {
                                             className="eltdf-icon-font-elegant social_linkedin eltdf-icon-element"
                                           ></span>{" "}
                                         </a>
-                                      </span>
+                                      </span> */}
                                     </span>
                                   </div>
                                 </div>
