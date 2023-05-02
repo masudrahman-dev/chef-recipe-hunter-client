@@ -61,7 +61,7 @@ export default {
     },
   },
   // eslint-disable-next-line no-undef
-  plugins: [require("daisyui"), require("flowbite/plugin")],
+  // plugins: [require("daisyui"), require("flowbite/plugin")],
   // eslint-disable-next-line no-undef
-  // plugins: [require("flowbite/plugin")],
+  plugins: [require("flowbite/plugin")],
 };
