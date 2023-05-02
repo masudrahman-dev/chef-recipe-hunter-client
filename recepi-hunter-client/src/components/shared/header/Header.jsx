@@ -1,6 +1,7 @@
 import { Collapse } from "flowbite";
 import React, { useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import ToggleButton from "../../ToggleButton";
 
 const Header = () => {
   //   const targetElRef = useRef(null);
@@ -36,11 +37,17 @@ const Header = () => {
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="" className="flex items-center">
+          <Link to="/" className="flex items-center">
+            <img
+              className="w-8 h-8 mr-2"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+              alt="logo"
+            />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Chefe Hunter
             </span>
-          </a>
+          </Link>
+          <ToggleButton />
           <div className="flex items-center md:order-2">
             <button
               type="button"
@@ -173,6 +180,22 @@ const Header = () => {
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Contact
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="login"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="registration"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Register
                 </NavLink>
               </li>
             </ul>
