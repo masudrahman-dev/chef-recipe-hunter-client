@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../../App";
 import Registration from "../../pages/registration/Registration";
-import Login from "../../pages/login/Login";
 import About from "../../pages/about/About";
 import Home from "../../pages/home/Home";
 import Contact from "../../pages/contact/Contact";
 import ErrorPage from "../../pages/errorPage/ErrorPage";
 import Blogs from "../../pages/blog/Blogs";
+import Login from "../../pages/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -30,15 +30,15 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact />,
       },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "registration",
+        element: <Registration />,
+      },
     ],
-  },
-  {
-    path: "login",
-    element: <Login />,
-  },
-  {
-    path: "registration",
-    element: <Registration />,
   },
 ]);
 export default router;

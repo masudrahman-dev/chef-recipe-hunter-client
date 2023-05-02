@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FaGithub, FaGoogle } from "react-icons/fa";
 const Login = () => {
   return (
     <div>
@@ -15,14 +15,30 @@ const Login = () => {
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
               alt="logo"
             />
-            Flowbite
+            Chefe Hunter
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Sign in to your account
+                Log in to your account
               </h1>
               <form className="space-y-4 md:space-y-6" action="#">
+                <div className="font-medium flex flex-col gap-3  text-gray-900 dark:text-white ">
+                  <Link
+                    to="/login"
+                    className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  >
+                    <FaGoogle />
+                    <p>Log in with Google</p>
+                  </Link>
+                  <Link
+                    to="/login"
+                    className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  >
+                    <FaGithub />
+                    <p>Log in with Github</p>
+                  </Link>
+                </div>
                 <div>
                   <label
                     htmlFor="email"
@@ -82,19 +98,19 @@ const Login = () => {
                     Forgot password?
                   </a>
                 </div>
-                <button
+                <Link
                   type="submit"
-                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  className="w-full text-white bg-primary-600 hover:bg-primary-700 md:text-xl focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
-                  Sign in
-                </button>
+                  Log in
+                </Link>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <Link
                     to="/registration"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
-                    Sign up
+                    Register here
                   </Link>
                 </p>
               </form>

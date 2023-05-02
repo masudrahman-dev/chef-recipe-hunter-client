@@ -195,7 +195,7 @@ URL: https://flowbite.com/docs/components/typography/
             <blockquote>
               <p>
                 Flowbite is just awesome. It contains tons of predesigned
-                components and pages starting from login screen to complex
+                components and pages starting from signin screen to complex
                 dashboard. Perfect choice for your next SaaS application.
               </p>
             </blockquote>

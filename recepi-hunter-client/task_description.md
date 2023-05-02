@@ -12,13 +12,13 @@ Create a website that shows the recipes of all available chefs. The website must
 
 3. Your website should have a navbar.
 
-   > with the **Website name, Home, Blogs** and **User profile picture**. The **user profile picture** on the navbar is conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the **Login button.** _If the user name is available, the user's name will be visible when the mouse hovers over the profile picture._
+   > with the **Website name, Home, Blogs** and **User profile picture**. The **user profile picture** on the navbar is conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the **signin button.** _If the user name is available, the user's name will be visible when the mouse hovers over the profile picture._
 
 4. Create a reasonable and meaningful footer.
 
-   > Make sure that the navbar and footer are present on all pages:
+   > Make sure that the navbar and footer are present on all pages: done
 
-5. When a user clicks on the login button, they will be redirected to the login page having the following:
+5. When a user clicks on the signin button, they will be redirected to the signin page having the following:
 
    - Email/Password
    - Google Sign-in
@@ -98,7 +98,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
    4. What is a custom hook, and why will you create a custom hook?
 
-1. The Chef Recipe page will be a private/protected page. If you reload the protected/private route (after login), this page will not redirect the user to the login page. Instead, it will keep the logged-in user on the protected route.
+1. The Chef Recipe page will be a private/protected page. If you reload the protected/private route (after signin), this page will not redirect the user to the signin page. Instead, it will keep the logged-in user on the protected route.
 
 1. Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
 

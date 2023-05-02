@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Sliding.css";
+import Slide from "./Slide";
 const Sliding = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -18,50 +19,23 @@ const Sliding = () => {
 
   return (
     <>
+      <div className="mx-auto max-w-screen-md text-center my-8 lg:mb-12">
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+          Check Our All Flavours Summer Promo
+        </h2>
+        <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          Cras aliquet dolor sit amet consectetur adipiscing elit purus egestas
+          diam sit vitae egestas suspendisse amet ultricies eu. Eget at
+          porttitor.
+        </p>
+      </div>
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide number-slide1">
-            {" "}
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              alt=""
-            />
-          </div>
-          <div className="keen-slider__slide number-slide2">
-            {" "}
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              alt=""
-            />
-          </div>
-          <div className="keen-slider__slide number-slide3">
-            {" "}
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              alt=""
-            />
-          </div>
-          <div className="keen-slider__slide number-slide4">
-            {" "}
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              alt=""
-            />
-          </div>
-          <div className="keen-slider__slide number-slide5">
-            {" "}
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              alt=""
-            />
-          </div>
-          <div className="keen-slider__slide number-slide6">
-            {" "}
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              alt=""
-            />
-          </div>
+          <Slide></Slide>
+          <Slide></Slide>
+          <Slide></Slide>
+          <Slide></Slide>
+          <Slide></Slide>
         </div>
         {loaded && instanceRef.current && (
           <>

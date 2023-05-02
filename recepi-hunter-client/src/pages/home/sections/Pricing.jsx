@@ -22,7 +22,6 @@ const Pricing = () => {
                 Best option for personal use & for your next project.
               </p>
               <div className="flex justify-center items-baseline my-8">
-                fillRule=
                 <span className="mr-2 text-5xl font-extrabold">$29</span>
                 <span className="text-gray-500 dark:text-gray-400">/month</span>
               </div>
