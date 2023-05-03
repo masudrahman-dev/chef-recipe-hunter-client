@@ -70,11 +70,11 @@ Create a website that shows the recipes of all available chefs. The website must
   1 =  - Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group.
       > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. _If needed, you can have duplicate recipes for each chef_
 
-12.  When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.
+12. 1 = When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.
 
-13. Show a spinner when the data is in a loading state
+13. 1 = Show a spinner when the data is in a loading state
 
-14. Create a 404 page. Add a picture on the 404 page.
+14. 1 = Create a 404 page. Add a picture on the 404 page.
 
 15. Use the Environment variable to hide the Firebase config keys.
 

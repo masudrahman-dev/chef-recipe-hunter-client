@@ -7,7 +7,13 @@ export default function ErrorPage() {
   return (
     <div id="error-page">
       {/* <!-- component --> */}
+
       <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
+        <img
+          className="w-48 pb-14"
+          src="https://i.ibb.co/VDtzrSw/5203299.jpg"
+          alt="404 image"
+        />
         <h1 className="text-9xl font-extrabold text-white tracking-widest">
           {error.status}
         </h1>
