@@ -1,13 +1,14 @@
 import { Collapse } from "flowbite";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ToggleButton from "../../ToggleButton";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const [isUserOpen, setIsUserOpen] = useState(false);
   const handleLogOut = () => {
+    setIsUserOpen(!isUserOpen);
     logOut()
       .then(() => {
         // Sign-out successful.
@@ -17,42 +18,54 @@ const Header = () => {
         // An error happened.
       });
   };
-
+  console.log("user :>> ", user);
+  // console.log(displayName,email,photoURL);
   return (
-    <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div className="mb-12">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 py-5 border">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4  ">
           <Link to="/" className="flex items-center">
             <img
               className="w-8 h-8 mr-2"
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
               alt="logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white">
               Chefe Hunter
             </span>
           </Link>
-          <ToggleButton />
-          <div className="flex items-center md:order-2">
-            <button
-              type="button"
-              className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-              id="user-menu-button"
-              aria-expanded="false"
-              data-dropdown-toggle="user-dropdown"
-              data-dropdown-placement="bottom"
-            >
-              <span className="sr-only">Open user menu</span>
-              <img
-                className="w-8 h-8 rounded-full"
-                src="https://source.unsplash.com/user/c_v_r/100x100"
-                alt="user photo"
-              />
-            </button>
+
+          <div className="flex relative items-center md:order-2">
+            {user?.displayName || user ? (
+              <button
+                onMouseOver={() => setIsUserOpen(!isUserOpen)}
+                type="button"
+                className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                id="user-menu-button"
+                aria-expanded="false"
+                data-dropdown-toggle="user-dropdown"
+                data-dropdown-placement="bottom"
+              >
+                <span className="sr-only">Open user menu</span>
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src="https://source.unsplash.com/user/c_v_r/100x100"
+                  alt="user photo"
+                />
+              </button>
+            ) : (
+              <Link
+                to="login"
+                className="block  py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                Sign in
+              </Link>
+            )}
             {/* <!-- Dropdown menu --> */}
             <div
-              //   ref={targetElRef}
-              className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+              className={`z-50  absolute top-7 sm:top-5 right-14 sm:right-7 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
+                isUserOpen && "hidden"
+              }`}
               id="user-dropdown"
             >
               <div className="px-4 py-3">
@@ -60,7 +73,7 @@ const Header = () => {
                   Bonnie Green
                 </span>
                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
-                  name@flowbite.com
+                  {user?.email}
                 </span>
               </div>
               <ul className="py-2" aria-labelledby="user-menu-button">
@@ -89,12 +102,12 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <button
+                    onClick={handleLogOut}
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
-                    Sign out
-                  </a>
+                    {user && <span>Sign out</span>}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -121,6 +134,7 @@ const Header = () => {
               </svg>
             </button>
           </div>
+          {/* nav link */}
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="mobile-menu-2"
@@ -167,31 +181,6 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
-              <li>
-                {user ? (
-                  <button
-                    onClick={handleLogOut}
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
-                    Log out
-                  </button>
-                ) : (
-                  <NavLink
-                    to="login"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
-                    Log in
-                  </NavLink>
-                )}
-              </li>
-              <li>
-                <NavLink
-                  to="register"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Register
-                </NavLink>
-              </li>
             </ul>
           </div>
         </div>
@@ -201,3 +190,33 @@ const Header = () => {
 };
 
 export default Header;
+{
+  /* <li>
+<NavLink
+  to="register"
+  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+>
+  Register
+</NavLink>
+</li> */
+}
+
+{
+  /* <li>
+{user ? (
+  <button
+    onClick={handleLogOut}
+    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+  >
+    Sign out
+  </button>
+) : (
+  <Link
+    to="login"
+    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+  >
+    Sign in
+  </Link>
+)}
+</li> */
+}

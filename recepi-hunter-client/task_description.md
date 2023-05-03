@@ -4,13 +4,13 @@
 
 Create a website that shows the recipes of all available chefs. The website must be exclusively dedicated to one cuisine(Bangladeshi, Chinese, Indian, Mediterranean, Thai, Japanese, Italian, African, Vietnamese, Srilankan, Nepalese, American, Korean, Mexican, Australian, Afgan, French, etc.). For example, if you give Chinese Chef and Chinese food recipes, it will only have Chinese Chef and Chinese food recipes. You cannot add recipes from other countries—only one country chef and recipe.
 
-1. Make sure your design is unique.
+1. Make sure your design is unique. done
 
    > First, select the cuisine type. Google the site design or visit ThemeForest to get your website idea. However, your website cannot relate to your previous assignments or any demo project displayed in the course or our conceptual sessions.
 
-2. Give your website a name. The name should appear on the website and be displayed on the website's title.
+2. Give your website a name. The name should appear on the website and be displayed on the website's title. done
 
-3. Your website should have a navbar.
+3. Your website should have a navbar. done
 
    > with the **Website name, Home, Blogs** and **User profile picture**. The **user profile picture** on the navbar is conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the **signin button.** _If the user name is available, the user's name will be visible when the mouse hovers over the profile picture._
 
