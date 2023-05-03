@@ -23,15 +23,21 @@ const Login = () => {
         const user = userCredential.user;
         console.log("Log in successful");
 
-        if (user !== null) {
-          // The user object has basic properties such as display name, email, etc.
-          const displayName = user.displayName;
-          const email = user.email;
-          const photoURL = user.photoURL;
-          const emailVerified = user.emailVerified;
+        // The user object has basic properties such as display name, email, etc.
+        const displayName = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
+        const emailVerified = user.emailVerified;
+        console.log(displayName, email, photoURL, emailVerified);
+        // if (user !== null) {
+        //   // The user object has basic properties such as display name, email, etc.
+        //   const displayName = user.displayName;
+        //   const email = user.email;
+        //   const photoURL = user.photoURL;
+        //   const emailVerified = user.emailVerified;
 
-          console.log(displayName, email, photoURL, emailVerified);
-        }
+        //   console.log(displayName, email, photoURL, emailVerified);
+        // }
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -96,7 +102,7 @@ const Login = () => {
                     id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
-                    required=""
+                    required
                   />
                 </div>
                 <div>
@@ -112,7 +118,7 @@ const Login = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required=""
+                    required
                   />
                 </div>
                 <div className="flex items-center justify-between">

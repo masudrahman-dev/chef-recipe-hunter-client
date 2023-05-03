@@ -1,7 +1,6 @@
 import { Collapse } from "flowbite";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import ToggleButton from "../../ToggleButton";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
         // An error happened.
       });
   };
-  console.log("user :>> ", user);
+  // console.log("user :>> ", user);
   // console.log(displayName,email,photoURL);
   return (
     <div className="mb-12">
@@ -37,7 +36,7 @@ const Header = () => {
           </Link>
 
           <div className="flex relative items-center md:order-2">
-            {user?.displayName || user ? (
+            {user ? (
               <button
                 onMouseOver={() => setIsUserOpen(!isUserOpen)}
                 type="button"
@@ -50,7 +49,7 @@ const Header = () => {
                 <span className="sr-only">Open user menu</span>
                 <img
                   className="w-8 h-8 rounded-full"
-                  src="https://source.unsplash.com/user/c_v_r/100x100"
+                  src={user?.photoURL || "don't have photo"}
                   alt="user photo"
                 />
               </button>
@@ -71,7 +70,7 @@ const Header = () => {
             >
               <div className="px-4 py-3">
                 <span className="block text-sm text-gray-900 dark:text-white">
-                  {user?.displayName || "Bonnie Green"}
+                  {user?.displayName || "don't have name"}
                 </span>
                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
                   {user?.email}
