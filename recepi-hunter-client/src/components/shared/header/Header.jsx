@@ -7,6 +7,7 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isUserOpen, setIsUserOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogOut = () => {
     setIsUserOpen(!isUserOpen);
     logOut()
@@ -22,7 +23,7 @@ const Header = () => {
   // console.log(displayName,email,photoURL);
   return (
     <div className="mb-12">
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 py-5 border">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 py-5 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4  ">
           <Link to="/" className="flex items-center">
             <img
@@ -70,7 +71,7 @@ const Header = () => {
             >
               <div className="px-4 py-3">
                 <span className="block text-sm text-gray-900 dark:text-white">
-                  Bonnie Green
+                  {user?.displayName || "Bonnie Green"}
                 </span>
                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
                   {user?.email}
@@ -112,9 +113,10 @@ const Header = () => {
               </ul>
             </div>
             <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               data-collapse-toggle="mobile-menu-2"
               type="button"
-              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex  items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="mobile-menu-2"
               aria-expanded="false"
             >
@@ -135,8 +137,11 @@ const Header = () => {
             </button>
           </div>
           {/* nav link */}
+
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            className={`items-center  justify-between w-full md:flex md:w-auto md:order-1 ${
+              isMenuOpen && "hidden"
+            }`}
             id="mobile-menu-2"
           >
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -190,33 +195,3 @@ const Header = () => {
 };
 
 export default Header;
-{
-  /* <li>
-<NavLink
-  to="register"
-  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
->
-  Register
-</NavLink>
-</li> */
-}
-
-{
-  /* <li>
-{user ? (
-  <button
-    onClick={handleLogOut}
-    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-  >
-    Sign out
-  </button>
-) : (
-  <Link
-    to="login"
-    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-  >
-    Sign in
-  </Link>
-)}
-</li> */
-}
