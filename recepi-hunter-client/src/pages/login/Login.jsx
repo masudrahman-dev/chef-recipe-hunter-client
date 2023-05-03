@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { handler } from "daisyui";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Login = () => {
+  const [user, setUser] = useState(null);
+
   const { logIn } = useContext(AuthContext);
   const handleLogin = (e) => {
+
     const form = e.target;
-    // const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
@@ -16,13 +17,16 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // ...
+        setUser(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
+
+      e.preventDefault();
   };
+  // console.log(user);
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">

@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Register = () => {
+  // const [user, setUser] = useState(null);
   const { registerUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
@@ -11,19 +12,20 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(name, email, password);
-    registerUser(email, password)
+    console.log(name, email, password);
+    registerUser(email, password,name)
       .then((userCredential) => {
         // Signed in
-        console.log(userCredential);
         const user = userCredential.user;
         console.log(user);
+        // setUser(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+    e.preventDefault();
   };
 
   return (
