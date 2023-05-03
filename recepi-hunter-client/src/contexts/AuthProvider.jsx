@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const updateUser = (name, photo) => {
+    setLoading(true);
     setName(name);
     setPhoto(photo);
   };
@@ -40,19 +41,6 @@ const AuthProvider = ({ children }) => {
       // ...
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   const logIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -62,16 +50,16 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("auth.currentUser :>> ", auth.currentUser);
       // console.log("logged in user inside auth state observer", currentUser);
+      setLoading(true);
       setUser(currentUser);
-      setLoading(false);
     });
-
+    
     return () => {
+ 
       unsubscribe();
     };
   }, []);

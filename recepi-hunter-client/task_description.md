@@ -46,7 +46,7 @@ Create a website that shows the recipes of all available chefs. The website must
    - A user cannot submit empty email and password fields
 
 8. On the Homepage: There will be a banner section. You can make it a reasonable banner. That be text on one side, and picture in another side. Or it could be text with background pictures. It could be a slider or a carousel. You can make it the way you want.
-
+done
 9. The home page will have a Chef section with at least six cards. Each card will have the following information:
 
    - Chef Picture

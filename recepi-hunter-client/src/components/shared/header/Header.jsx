@@ -2,11 +2,26 @@ import { Collapse } from "flowbite";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import { Button, Spinner } from "flowbite-react";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
-  const [isUserOpen, setIsUserOpen] = useState(false);
+  const { user, logOut,loading } = useContext(AuthContext);
+  const [isUserOpen, setIsUserOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // console.log('loading :>> ', loading);
+  if (!loading) {
+    return (
+      <Button>
+        <Spinner aria-label="Spinner button example" />
+        <span className="pl-3">Loading...</span>
+      </Button>
+    );
+  }
+
+
+
+
+
   const handleLogOut = () => {
     setIsUserOpen(!isUserOpen);
     logOut()
@@ -41,10 +56,6 @@ const Header = () => {
                 onMouseOver={() => setIsUserOpen(!isUserOpen)}
                 type="button"
                 className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                id="user-menu-button"
-                aria-expanded="false"
-                data-dropdown-toggle="user-dropdown"
-                data-dropdown-placement="bottom"
               >
                 <span className="sr-only">Open user menu</span>
                 <img
@@ -62,11 +73,11 @@ const Header = () => {
               </Link>
             )}
             {/* <!-- Dropdown menu --> */}
+            {/* user */}
             <div
               className={`z-50  absolute top-7 sm:top-5 right-14 sm:right-7 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
                 isUserOpen && "hidden"
               }`}
-              id="user-dropdown"
             >
               <div className="px-4 py-3">
                 <span className="block text-sm text-gray-900 dark:text-white">
@@ -78,28 +89,28 @@ const Header = () => {
               </div>
               <ul className="py-2" aria-labelledby="user-menu-button">
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
                     Dashboard
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
                     Settings
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
                     Earnings
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <button
@@ -111,6 +122,8 @@ const Header = () => {
                 </li>
               </ul>
             </div>
+
+            {/* menu */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               data-collapse-toggle="mobile-menu-2"
