@@ -3,9 +3,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { Button, Spinner } from "flowbite-react";
-
+import './Header.css'
 const Header = () => {
-  const { user, logOut,loading } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   const [isUserOpen, setIsUserOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // console.log('loading :>> ', loading);
@@ -17,10 +17,6 @@ const Header = () => {
       </Button>
     );
   }
-
-
-
-
 
   const handleLogOut = () => {
     setIsUserOpen(!isUserOpen);

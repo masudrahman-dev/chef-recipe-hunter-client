@@ -12,8 +12,8 @@ const PrivateRoute = ({ children }) => {
   if (!loading) {
     return (
       <Button>
-        <Spinner aria-label="Spinner button example" />
-        <span className="pl-3">Loading...</span>
+        <Spinner aria-label="Spinner button example " />
+        <span className="pl-3">Private Route Loading...</span>
       </Button>
     );
   }

@@ -78,7 +78,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
 15. Use the Environment variable to hide the Firebase config keys.
 
-16. Add "active route" to indicate the route which you are visiting.
+16. 1 - Add "active route" to indicate the route which you are visiting.
 
 ## **Bonus**
 
