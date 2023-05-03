@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Sliding.css";
 import Slide from "./Slide";
+import { useLoaderData } from "react-router-dom";
 const Sliding = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -16,7 +17,7 @@ const Sliding = () => {
       setLoaded(true);
     },
   });
-
+  const data = useLoaderData();
   return (
     <>
       <div className="mx-auto max-w-screen-md text-center my-8 lg:mb-12">
@@ -31,11 +32,9 @@ const Sliding = () => {
       </div>
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
-          <Slide></Slide>
-          <Slide></Slide>
-          <Slide></Slide>
-          <Slide></Slide>
-          <Slide></Slide>
+          {data[1].map((s) => (
+            <Slide key={s._id} s={s} />
+          ))}
         </div>
         {loaded && instanceRef.current && (
           <>

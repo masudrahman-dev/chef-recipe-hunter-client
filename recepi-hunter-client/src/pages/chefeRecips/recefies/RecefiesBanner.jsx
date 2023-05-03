@@ -1,8 +1,17 @@
 import React from "react";
 
 const RecefiesBanner = ({ data }) => {
-  const { about, chef_image, likes, name, total_recefie, year_of_experience } =
-    data;
+  const {
+    about,
+    chef_image,
+    chefe_image,
+    likes,
+    name,
+    total_recefie,
+    year_of_experience,
+  } = data;
+
+  // console.log('data :>> ', data);
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
@@ -24,10 +33,7 @@ const RecefiesBanner = ({ data }) => {
             <div className="border ">
               <img
                 className="w-full   "
-                src={
-                  chef_image ||
-                  "https://savory.qodeinteractive.com/wp-content/uploads/2016/10/left-menu-team4.jpg"
-                }
+                src={chef_image || chefe_image}
                 alt=""
               />
             </div>
