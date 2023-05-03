@@ -1,8 +1,12 @@
 import React from "react";
 import RecefiesBanner from "./recefies/RecefiesBanner";
 import RecefiesCard from "./recefies/RecefiesCard";
-
+import { useLoaderData, useParams } from "react-router-dom";
 const ChefeRecefies = () => {
+  // const data = useLoaderData();
+  // console.log("data :>> ", data);
+  const id = useParams();
+  console.log("id :>> ", id);
   return (
     <div>
       <RecefiesBanner></RecefiesBanner>

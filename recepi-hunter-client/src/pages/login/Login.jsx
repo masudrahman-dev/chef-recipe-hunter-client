@@ -8,9 +8,9 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("login page location", location);
+  // console.log("login page location", location);
   const from = location.state?.from?.pathname || "/";
-  console.log("from :>> ", from);
+  // console.log("from :>> ", from);
   const handleLogin = (e) => {
     const form = e.target;
     const email = form.email.value;

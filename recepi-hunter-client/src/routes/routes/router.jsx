@@ -8,6 +8,9 @@ import ErrorPage from "../../pages/errorPage/ErrorPage";
 import Blogs from "../../pages/blog/Blogs";
 import Login from "../../pages/login/Login";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import loader from "../../loaders/loader";
+import ChefeRecefies from "../../pages/chefeRecips/ChefeRecefies";
+import chefeDetailsLoader from "../../loaders/chefeDetailsLoader";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +21,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: loader,
       },
+      {
+        path: "home/:id",
+        element: <ChefeRecefies></ChefeRecefies>,
+        loader: chefeDetailsLoader
+      },
+
       {
         path: "Blogs",
         element: <Blogs />,
