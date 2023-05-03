@@ -4,28 +4,28 @@
 
 Create a website that shows the recipes of all available chefs. The website must be exclusively dedicated to one cuisine(Bangladeshi, Chinese, Indian, Mediterranean, Thai, Japanese, Italian, African, Vietnamese, Srilankan, Nepalese, American, Korean, Mexican, Australian, Afgan, French, etc.). For example, if you give Chinese Chef and Chinese food recipes, it will only have Chinese Chef and Chinese food recipes. You cannot add recipes from other countries—only one country chef and recipe.
 
-1. Make sure your design is unique. done
+1. 1 = Make sure your design is unique. done
 
    > First, select the cuisine type. Google the site design or visit ThemeForest to get your website idea. However, your website cannot relate to your previous assignments or any demo project displayed in the course or our conceptual sessions.
 
-2. Give your website a name. The name should appear on the website and be displayed on the website's title. done
+2. 1= Give your website a name. The name should appear on the website and be displayed on the website's title. done
 
-3. Your website should have a navbar.
+3. 1 = Your website should have a navbar.
 
    > with the **Website name, Home, Blogs** and **User profile picture**. The **user profile picture** on the navbar is conditional. If the user is signed in, the navbar will show the profile picture; otherwise, it will show the **signin button.** _If the user name is available, the user's name will be visible when the mouse hovers over the profile picture._
 
-4. Create a reasonable and meaningful footer.
+4. 1 = Create a reasonable and meaningful footer.
 
    > Make sure that the navbar and footer are present on all pages: done
 
-5. When a user clicks on the signin button, they will be redirected to the signin page having the following:
+5. 0 = When a user clicks on the signin button, they will be redirected to the signin page having the following:
 
    - Email/Password
    - Google Sign-in
    - GitHub Sign-in
    - A link that will redirect to the registration page
 
-6. The Registration page will have the Email/Password form having the following fields:
+6. 1 = The Registration page will have the Email/Password form having the following fields:
 
    - Name
 
@@ -37,7 +37,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
    > **Note:** Do not enforce the email verification method, as it will inconvenience the examiner. If you want, you can add email verification after receiving the assignment result.
 
-7. On the Registration page, display errors when:
+7. 0 = On the Registration page, display errors when:
 
    - A user's email address or password doesn't match.
 
@@ -45,9 +45,9 @@ Create a website that shows the recipes of all available chefs. The website must
 
    - A user cannot submit empty email and password fields
 
-8. On the Homepage: There will be a banner section. You can make it a reasonable banner. That be text on one side, and picture in another side. Or it could be text with background pictures. It could be a slider or a carousel. You can make it the way you want.
-done
-9. The home page will have a Chef section with at least six cards. Each card will have the following information:
+8. 1 = On the Homepage: There will be a banner section. You can make it a reasonable banner. That be text on one side, and picture in another side. Or it could be text with background pictures. It could be a slider or a carousel. You can make it the way you want.
+
+9. 1 = The home page will have a Chef section with at least six cards. Each card will have the following information:
 
    - Chef Picture
 
@@ -61,16 +61,16 @@ done
 
    - View Recipes Button
 
-10. Add at least **two** extra sections on the home page. Make sure the sections are meaningful for the website you are building.
+10. 1 = Add at least **two** extra sections on the home page. Make sure the sections are meaningful for the website you are building.
 
-11. When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The _Chef Recipes_ page will have the following :
+11. 1 =  When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The _Chef Recipes_ page will have the following :
 
-    - **Banner** - chef picture, chef name, a short bio/description, likes, number of recipes, and years of experience.
+ 1 =   - **Banner** - chef picture, chef name, a short bio/description, likes, number of recipes, and years of experience.
 
-    - Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group.
+  1 =  - Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group.
       > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. _If needed, you can have duplicate recipes for each chef_
 
-12. When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.
+12.  When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.
 
 13. Show a spinner when the data is in a loading state
 
