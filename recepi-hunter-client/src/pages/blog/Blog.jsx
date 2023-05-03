@@ -32,13 +32,7 @@ URL: https://flowbite.com/docs/components/typography/
                       Graphic Designer, educator & CEO Flowbite
                     </p>
                     <p className="text-base font-light text-gray-500 dark:text-gray-400">
-                      <time
-                        pubdate
-                        datetime="2022-02-08"
-                        title="February 8th, 2022"
-                      >
-                        Feb. 8, 2022
-                      </time>
+                      <time title="February 8th, 2022">Feb. 8, 2022</time>
                     </p>
                   </div>
                 </div>
@@ -354,13 +348,7 @@ URL: https://flowbite.com/docs/components/typography/
                       Michael Gough
                     </p>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      <time
-                        pubdate
-                        datetime="2022-02-08"
-                        title="February 8th, 2022"
-                      >
-                        Feb. 8, 2022
-                      </time>
+                      <time title="February 8th, 2022">Feb. 8, 2022</time>
                     </p>
                   </div>
                   <button

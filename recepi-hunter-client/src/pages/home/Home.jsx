@@ -4,9 +4,11 @@ import ChefeSection from "./sections/ChefeSection";
 import Pricing from "./sections/Pricing";
 import Sliding from "../../components/slidering/Sliding";
 
+
 const Home = () => {
   return (
     <div className="">
+      
       <Banner></Banner>
       {/* <Test></Test> */}
       <ChefeSection></ChefeSection>

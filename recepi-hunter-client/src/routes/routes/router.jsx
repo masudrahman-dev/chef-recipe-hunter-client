@@ -6,7 +6,8 @@ import Home from "../../pages/home/Home";
 import Contact from "../../pages/contact/Contact";
 import ErrorPage from "../../pages/errorPage/ErrorPage";
 import Blogs from "../../pages/blog/Blogs";
-import Login from "../../pages/Login/Login";
+import Login from "../../pages/login/Login";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <About />,
+        element: (
+          <PrivateRoute>
+            <About />
+          </PrivateRoute>
+        ),
       },
       {
         path: "contact",

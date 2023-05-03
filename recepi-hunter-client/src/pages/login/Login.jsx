@@ -1,30 +1,44 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 const Login = () => {
-  const [user, setUser] = useState(null);
-
   const { logIn } = useContext(AuthContext);
-  const handleLogin = (e) => {
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/";
+  console.log("from :>> ", from);
+  const handleLogin = (e) => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     logIn(email, password)
       .then((userCredential) => {
         // Signed in
+        navigate(from, { replace: true });
         const user = userCredential.user;
-        setUser(user);
+        console.log("Log in successful");
+
+        if (user !== null) {
+          // The user object has basic properties such as display name, email, etc.
+          const displayName = user.displayName;
+          const email = user.email;
+          const photoURL = user.photoURL;
+          const emailVerified = user.emailVerified;
+
+          console.log(displayName, email, photoURL, emailVerified);
+        }
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
 
-      e.preventDefault();
+    e.preventDefault();
   };
   // console.log(user);
   return (
@@ -53,13 +67,14 @@ const Login = () => {
                 action="#"
               >
                 <div className="font-medium flex flex-col gap-3  text-gray-900 dark:text-white ">
-                  <Link
-                    to="/login"
+                  <button
+                    // onClick={handleLogin}
+                    // onClick={() => logInWithGoogle()}
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     <FaGoogle />
                     <p>Log in with Google</p>
-                  </Link>
+                  </button>
                   <Link
                     to="/login"
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
