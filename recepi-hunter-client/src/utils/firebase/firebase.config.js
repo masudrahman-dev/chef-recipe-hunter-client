@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "recepi-hunter-client",
   storageBucket: "recepi-hunter-client.appspot.com",
   messagingSenderId: "780464234426",
-  appId: "1:780464234426:web:7263f1c5b9d92f431a0783",
+  appId: "1:780464234426:web:7263f1c5b9d92f431a0783"
 };
 
 // Initialize Firebase

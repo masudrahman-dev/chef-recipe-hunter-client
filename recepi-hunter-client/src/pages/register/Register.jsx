@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
-const Registration = () => {
+const Register = () => {
+  const { registerUser } = useContext(AuthContext);
+
+  const handleRegister = (e) => {
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(name, email, password);
+    registerUser(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -23,17 +45,20 @@ const Registration = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Create an account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                onSubmit={handleRegister}
+                className="space-y-4 md:space-y-6"
+              >
                 <div className="font-medium flex flex-col gap-3  text-gray-900 dark:text-white ">
                   <Link
-                    to="/registration"
+                    to="/register"
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     <FaGoogle />
                     <p>Register with Google</p>
                   </Link>
                   <Link
-                    to="/registration"
+                    to="/register"
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     <FaGithub />
@@ -138,4 +163,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Register;
