@@ -15,6 +15,7 @@ const Register = () => {
     registerUser(email, password)
       .then((userCredential) => {
         // Signed in
+        console.log(userCredential);
         const user = userCredential.user;
         console.log(user);
       })

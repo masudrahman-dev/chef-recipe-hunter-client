@@ -1,7 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { handler } from "daisyui";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
 const Login = () => {
+  const { logIn } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    const form = e.target;
+    // const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    logIn(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -22,7 +43,11 @@ const Login = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Log in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                onSubmit={handleLogin}
+                className="space-y-4 md:space-y-6"
+                action="#"
+              >
                 <div className="font-medium flex flex-col gap-3  text-gray-900 dark:text-white ">
                   <Link
                     to="/login"
@@ -98,12 +123,12 @@ const Login = () => {
                     Forgot password?
                   </a>
                 </div>
-                <Link
+                <button
                   type="submit"
                   className="w-full text-white bg-primary-600 hover:bg-primary-700 md:text-xl focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Log in
-                </Link>
+                </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <Link
