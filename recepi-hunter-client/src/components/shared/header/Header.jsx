@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { Button, Spinner } from "flowbite-react";
-import './Header.css'
+import "./Header.css";
 const Header = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const [isUserOpen, setIsUserOpen] = useState(true);
@@ -11,10 +11,14 @@ const Header = () => {
   // console.log('loading :>> ', loading);
   if (!loading) {
     return (
-      <Button>
-        <Spinner aria-label="Spinner button example" />
-        <span className="pl-3">Loading...</span>
-      </Button>
+      <div className="">
+        <div className="absolute top-0 left-0  ">
+          <Button>
+            <Spinner aria-label="Spinner button example" />
+            <span className="pl-3">Loading...</span>
+          </Button>
+        </div>
+      </div>
     );
   }
 
@@ -85,28 +89,19 @@ const Header = () => {
               </div>
               <ul className="py-2" aria-labelledby="user-menu-button">
                 <li>
-                  <NavLink
-                    to="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
+                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                     Dashboard
-                  </NavLink>
+                  </p>
                 </li>
                 <li>
-                  <NavLink
-                    to="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
+                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                     Settings
-                  </NavLink>
+                  </p>
                 </li>
                 <li>
-                  <NavLink
-                    to="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
+                  <p className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                     Earnings
-                  </NavLink>
+                  </p>
                 </li>
                 <li>
                   <button

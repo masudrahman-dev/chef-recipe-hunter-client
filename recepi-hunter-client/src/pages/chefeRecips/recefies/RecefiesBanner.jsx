@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 
 const RecefiesBanner = ({ data }) => {
   const {
@@ -30,12 +31,14 @@ const RecefiesBanner = ({ data }) => {
                 <p>years of experience : {year_of_experience} years</p>
               </div>
             </div>
-            <div className="border ">
-              <img
-                className="w-full   "
-                src={chef_image || chefe_image}
-                alt=""
-              />
+            <div >
+              <LazyLoad width={762} threshold={0.95}>
+                <img
+                  className="w-full rounded-lg  "
+                  src={chef_image || chefe_image}
+                  alt=""
+                />
+              </LazyLoad>
             </div>
           </div>
         </div>

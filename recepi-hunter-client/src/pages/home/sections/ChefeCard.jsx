@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 import { Link, useLoaderData } from "react-router-dom";
 
 const ChefeCard = ({ card }) => {
@@ -11,13 +12,15 @@ const ChefeCard = ({ card }) => {
       <div className=" bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className=" flex justify-center">
           <div className="my-10 flex flex-col items-center">
-            <img
-              className="w-36 h-36 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 "
-              src={
-                chefe_image ||
-                "https://savory.qodeinteractive.com/wp-content/uploads/2016/10/left-menu-team4.jpg"
-              }
-            />
+            <LazyLoad height={150} width={150} threshold={0.95}>
+              <img
+                className="w-36 h-36 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 "
+                src={
+                  chefe_image ||
+                  "https://savory.qodeinteractive.com/wp-content/uploads/2016/10/left-menu-team4.jpg"
+                }
+              />
+            </LazyLoad>
 
             <h5 className="mb-2 mt-5 text-xl font-medium text-gray-900 dark:text-white">
               {name}

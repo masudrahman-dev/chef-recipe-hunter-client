@@ -11,10 +11,14 @@ const PrivateRoute = ({ children }) => {
   // console.log('loading private :>> ', loading);
   if (!loading) {
     return (
-      <Button>
-        <Spinner aria-label="Spinner button example " />
-        <span className="pl-3">Private Route Loading...</span>
-      </Button>
+      <div className="absolute bottom-0">
+        <div className=" ">
+          <Button>
+            <Spinner aria-label="Spinner button example" />
+            <span className="pl-3">Loading...</span>
+          </Button>
+        </div>
+      </div>
     );
   }
 

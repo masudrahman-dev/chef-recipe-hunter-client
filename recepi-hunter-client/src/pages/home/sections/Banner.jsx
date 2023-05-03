@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
   return (
@@ -90,11 +91,11 @@ const Banner = () => {
               </svg>
             </Link>
           </div>
-          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img
-              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/promotion-1.jpg"
-              alt="mockup"
-            />
+          <div className="hidden  lg:mt-0 lg:col-span-5 lg:flex">
+            {/* <LazyLoad height={762}></LazyLoad> */}
+            <LazyLoad   threshold={0.95}>
+              <img className="rounded-lg" src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/promotion-1.jpg" />
+            </LazyLoad>
           </div>
         </div>
       </section>

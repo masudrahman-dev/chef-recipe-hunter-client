@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { FaBookmark } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import LazyLoad from "react-lazy-load";
 const RecefiesCard = ({ recipe }) => {
   const [rate, setRate] = useState();
   const [mark, setMark] = useState(false);
@@ -17,15 +18,16 @@ const RecefiesCard = ({ recipe }) => {
       <div className=" bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className=" flex justify-center">
           <div className="my-10 flex flex-col items-center">
-            <img
-              //   className="border "
-              className="w-48 h-48 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 "
-              src={
-                recipe_image ||
-                "https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
-              }
-            />
-
+            <LazyLoad threshold={0.95}>
+              <img
+                //   className="border "
+                className="w-48 h-48 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 "
+                src={
+                  recipe_image ||
+                  "https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2019/01/shop-1.png"
+                }
+              />
+            </LazyLoad>
             <h5 className="mb-2 my-5 text-xl  font-medium text-gray-900 dark:text-white">
               {recipe_name}
             </h5>

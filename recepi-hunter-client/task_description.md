@@ -63,12 +63,11 @@ Create a website that shows the recipes of all available chefs. The website must
 
 10. 1 = Add at least **two** extra sections on the home page. Make sure the sections are meaningful for the website you are building.
 
-11. 1 =  When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The _Chef Recipes_ page will have the following :
+11. 1 = When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The _Chef Recipes_ page will have the following :
 
- 1 =   - **Banner** - chef picture, chef name, a short bio/description, likes, number of recipes, and years of experience.
+1 = - **Banner** - chef picture, chef name, a short bio/description, likes, number of recipes, and years of experience.
 
-  1 =  - Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group.
-      > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. _If needed, you can have duplicate recipes for each chef_
+1 = - Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group. > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. _If needed, you can have duplicate recipes for each chef_
 
 12. 1 = When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.
 
@@ -76,17 +75,17 @@ Create a website that shows the recipes of all available chefs. The website must
 
 14. 1 = Create a 404 page. Add a picture on the 404 page.
 
-15. Use the Environment variable to hide the Firebase config keys.
+15. 0 = Use the Environment variable to hide the Firebase config keys.
 
 16. 1 - Add "active route" to indicate the route which you are visiting.
 
 ## **Bonus**
 
-1. Minimum 12 meaningful git commits on the client-side repository and minimum of 5 meaningful commits on the server-side repository.
+1. 1 = Minimum 12 meaningful git commits on the client-side repository and minimum of 5 meaningful commits on the server-side repository.
 
-1. Create a readme for **client-side** and write about your project (at least 5 bullet points) .Do not forget to add your live site link of your website here.
+1. 1 = Create a readme for **client-side** and write about your project (at least 5 bullet points) .Do not forget to add your live site link of your website here.
 
-1. Make your website home page mobile & desktop responsive (tablet responsive is optional)
+1. 1 = Make your website home page mobile & desktop responsive (tablet responsive is optional)
 
 1. Create a `Blogss` page route where you will have to answer the following questions
 
@@ -98,7 +97,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
    4. What is a custom hook, and why will you create a custom hook?
 
-1. The Chef Recipe page will be a private/protected page. If you reload the protected/private route (after signin), this page will not redirect the user to the signin page. Instead, it will keep the logged-in user on the protected route.
+1. 1 =  The Chef Recipe page will be a private/protected page. If you reload the protected/private route (after signin), this page will not redirect the user to the signin page. Instead, it will keep the logged-in user on the protected route.
 
 1. Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
 
