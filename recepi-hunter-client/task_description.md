@@ -87,7 +87,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
 1. 1 = Make your website home page mobile & desktop responsive (tablet responsive is optional)
 
-1. Create a `Blogss` page route where you will have to answer the following questions
+1. 0 = Create a `Blogss` page route where you will have to answer the following questions
 
    1. Tell us the differences between uncontrolled and controlled components.
 
@@ -99,15 +99,15 @@ Create a website that shows the recipes of all available chefs. The website must
 
 1. 1 =  The Chef Recipe page will be a private/protected page. If you reload the protected/private route (after signin), this page will not redirect the user to the signin page. Instead, it will keep the logged-in user on the protected route.
 
-1. Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
+1. 1 = Apply lazy load to the chef picture either on the banner of `Chef Recipes` or on the chef pictures of the six cards on the Homepage.
 
    > Hint: Google `React Awesome components`, go to the GitHub repo, find `react-lazy-load`, and try it. Alternatively, you can try any other package as well.
 
-1. FUN: The Blogs page, Create a heading and add an icon/ button. When you click on that button, it will create a pdf and will be downloaded ( This will give you some fun. Try out this after completing all of your tasks. Hint: Explore `react-to-pdf` package). Your pdf should contain some information about the Blogs page.
+1. 0 = FUN: The Blogs page, Create a heading and add an icon/ button. When you click on that button, it will create a pdf and will be downloaded ( This will give you some fun. Try out this after completing all of your tasks. Hint: Explore `react-to-pdf` package). Your pdf should contain some information about the Blogs page.
 
-1. Make sure your site looks reasonable. The design and color selection is meaningful.
+1. 1 = Make sure your site looks reasonable. The design and color selection is meaningful.
 
-1. Clean and organized Code (folder structure). Organize components with meaningful names, and add comments when needed.
+1. 1 = Clean and organized Code (folder structure). Organize components with meaningful names, and add comments when needed.
 
 ## Optional (But Highly Recommended):
 
