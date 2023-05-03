@@ -25,8 +25,12 @@ const router = createBrowserRouter([
       },
       {
         path: "home/:id",
-        element: <ChefeRecefies></ChefeRecefies>,
-        loader: chefeDetailsLoader
+        element: (
+          <PrivateRoute>
+            <ChefeRecefies></ChefeRecefies>
+          </PrivateRoute>
+        ),
+        loader: chefeDetailsLoader,
       },
 
       {

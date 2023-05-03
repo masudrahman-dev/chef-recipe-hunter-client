@@ -11,7 +11,7 @@ const RecefiesCard = ({ recipe }) => {
   const [mark, setMark] = useState(false);
   const { recipe_name, recipe_image, rating, cooking_method, ingredients, id } =
     recipe;
-
+// console.log('recipe :>> ', recipe);
   return (
     <div className="  w-full ">
       <div className=" bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
