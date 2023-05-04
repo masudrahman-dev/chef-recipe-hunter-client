@@ -13,10 +13,13 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   // console.log("login page location", location);
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname;
 
   useEffect(() => {
-    navigate(from, { replace: true });
+    console.log("from :>> ", from);
+    if (from) {
+      navigate(from, { replace: true });
+    }
   }, [user]);
 
   if (!loading) {

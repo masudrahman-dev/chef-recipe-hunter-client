@@ -4,7 +4,6 @@ import Blog from "./Blog";
 const Blogs = () => {
   return (
     <div>
-      {/* <Blog></Blog> */}
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
@@ -15,7 +14,7 @@ const Blogs = () => {
               We write about react js concept that is mostly uses.
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-8 grid-cols-1">
             <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
               <div className="flex justify-between items-center mb-5 text-gray-500">
                 <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
@@ -80,26 +79,32 @@ const Blogs = () => {
                 parent component.
               </p>{" "}
               <br />
-              <p>Here is a example of control component.</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/VVZzpPh/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>Here is a example of control component.</p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/VVZzpPh/image.png"
+                  alt=""
+                />
+              </div>
               <br />
-              <p>Here is a example of uncontrolled component.</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/sHQ0qQc/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>Here is a example of uncontrolled component.</p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/sHQ0qQc/image.png"
+                  alt=""
+                />
+              </div>
               <div className="flex justify-between items-center mt-5">
                 <div className="flex items-center space-x-4">
-                  <img
-                    className="w-7 h-7 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                    alt="Jese Leos avatar"
-                  />
+                  <div className="flex flex-col items-center justify-center">
+                    <img
+                      className="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                      alt="Jese Leos avatar"
+                    />
+                  </div>
                   <span className="font-medium dark:text-white">Jese Leos</span>
                 </div>
                 <Link
@@ -170,19 +175,23 @@ const Blogs = () => {
                 that needs it could cause your app to behave unexpectedly.
               </p>{" "}
               <br />
-              <p>Here is a example of control component.</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/k3dQK2Z/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>Here is a example of control component.</p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/k3dQK2Z/image.png"
+                  alt=""
+                />
+              </div>
               <div className="flex justify-between items-center mt-5">
                 <div className="flex items-center space-x-4">
-                  <img
-                    className="w-7 h-7 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                    alt="Jese Leos avatar"
-                  />
+                  <div className="flex flex-col items-center justify-center">
+                    <img
+                      className="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                      alt="Jese Leos avatar"
+                    />{" "}
+                  </div>
                   <span className="font-medium dark:text-white">Jese Leos</span>
                 </div>
                 <Link
@@ -255,26 +264,34 @@ const Blogs = () => {
               <br />
               <h4>Why should you validate props in React?</h4>
               <br />
-              <p>Here is a example of Node.js to build a basic web server .</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/D78jbYL/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>
+                  Here is a example of Node.js to build a basic web server .
+                </p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/D78jbYL/image.png"
+                  alt=""
+                />
+              </div>
               <br />
-              <p>Here is a example of Express.js to build a api .</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/X3Y2J70/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>Here is a example of Express.js to build a api .</p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/X3Y2J70/image.png"
+                  alt=""
+                />
+              </div>
               <div className="flex justify-between items-center mt-5">
                 <div className="flex items-center space-x-4">
-                  <img
-                    className="w-7 h-7 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                    alt="Jese Leos avatar"
-                  />
+                  <div className="flex flex-col items-center justify-center">
+                    <img
+                      className="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                      alt="Jese Leos avatar"
+                    />
+                  </div>
                   <span className="font-medium dark:text-white">Jese Leos</span>
                 </div>
                 <Link
@@ -326,19 +343,23 @@ const Blogs = () => {
               </p>
               <br />
 
-              <p>Here is a example of UseLocalStorage custom hook</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/Sd8cTPc/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>Here is a example of UseLocalStorage custom hook</p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/Sd8cTPc/image.png"
+                  alt=""
+                />
+              </div>
               <br />
-              <p>another example of UseFetch custom hook</p>
-              <img
-                className="rounded-lg my-5"
-                src="https://i.ibb.co/Kr467cS/image.png"
-                alt=""
-              />
+              <div className="flex flex-col items-center justify-center">
+                <p>another example of UseFetch custom hook</p>
+                <img
+                  className="rounded-lg my-5"
+                  src="https://i.ibb.co/Kr467cS/image.png"
+                  alt=""
+                />
+              </div>
               <div className="flex justify-between items-center mt-5">
                 <div className="flex items-center space-x-4">
                   <img
@@ -346,6 +367,7 @@ const Blogs = () => {
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                     alt="Jese Leos avatar"
                   />
+
                   <span className="font-medium dark:text-white">Jese Leos</span>
                 </div>
                 <Link
