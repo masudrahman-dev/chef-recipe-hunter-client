@@ -14,8 +14,6 @@ import app from "../../utils/firebase/firebase.config";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
 
-  const [user, setUser] = useState(null);
-
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -25,24 +23,23 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        setUser(loggedInUser);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  // const handleGithubSignIn = () => {
-  //   signInWithPopup(auth, githubProvider)
-  //     .then((result) => {
-  //       const loggedUser = result.user;
-  //       console.log(loggedUser);
-  //       // setUser(loggedUser);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+  const handleGithubSignIn = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        // setUser(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -60,22 +57,6 @@ const Login = () => {
         navigate(from, { replace: true });
         const user = userCredential.user;
         console.log("Log in successful");
-
-        // The user object has basic properties such as display name, email, etc.
-        const displayName = user.displayName;
-        const email = user.email;
-        const photoURL = user.photoURL;
-        const emailVerified = user.emailVerified;
-        console.log(displayName, email, photoURL, emailVerified);
-        // if (user !== null) {
-        //   // The user object has basic properties such as display name, email, etc.
-        //   const displayName = user.displayName;
-        //   const email = user.email;
-        //   const photoURL = user.photoURL;
-        //   const emailVerified = user.emailVerified;
-
-        //   console.log(displayName, email, photoURL, emailVerified);
-        // }
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -118,13 +99,13 @@ const Login = () => {
                     <FaGoogle />
                     <p>Log in with Google</p>
                   </button>
-                  <Link
-                    to="/login"
+                  <button
+                    onClick={handleGithubSignIn}
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     <FaGithub />
                     <p>Log in with Github</p>
-                  </Link>
+                  </button>
                 </div>
                 <div>
                   <label
