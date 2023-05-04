@@ -14,7 +14,7 @@
 8. don't reload when navigate one to another link
 9. sign in and Sign up with email, google, github
 10. Private or Protected is available
-11. Load data Dynamically 
+11. Load data Dynamically
 12. Dark and Light mode toggle
 
 ### Uses Technology
@@ -35,4 +35,4 @@
 2. Express js
 3. Nodemon
 
-### [Visit example.com](https://example.com)
+### [Visit Live site](https://recepi-hunter-client.web.app/)
