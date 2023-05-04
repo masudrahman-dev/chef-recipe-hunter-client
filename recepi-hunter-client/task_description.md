@@ -39,11 +39,11 @@ Create a website that shows the recipes of all available chefs. The website must
 
 7. 0 = On the Registration page, display errors when:
 
-   - A user's email address or password doesn't match.
+ 1  - A user's email address or password doesn't match.
 
-   - The password is less than 6 characters
+  1 - The password is less than 6 characters
 
-   - A user cannot submit empty email and password fields
+  1 - A user cannot submit empty email and password fields
 
 8. 1 = On the Homepage: There will be a banner section. You can make it a reasonable banner. That be text on one side, and picture in another side. Or it could be text with background pictures. It could be a slider or a carousel. You can make it the way you want.
 

@@ -14,11 +14,6 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    if (!/^.{6,}$/.test(password)) {
-      setErrorMessage("Password must be at least 6 characters long.");
-    } else {
-      setErrorMessage("");
-    }
     logIn(email, password)
       .then((userCredential) => {
         // Signed in
@@ -27,7 +22,17 @@ const Login = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
+        // console.log("errorCode :>> ", errorCode);
         const errorMessage = error.message;
+        // console.log(errorMessage);
+        if (
+          error.code === "auth/wrong-password" ||
+          error.code === "auth/user-not-found"
+        ) {
+          setErrorMessage("Invalid email or password");
+        } else {
+          setErrorMessage("Unknown error occurred, please try again later");
+        }
       });
 
     e.preventDefault();
