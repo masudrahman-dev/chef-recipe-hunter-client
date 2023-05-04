@@ -1,8 +1,10 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import Blog from "./Blog";
 const Blogs = () => {
   return (
     <div>
+      {/* <Blog></Blog> */}
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
@@ -10,8 +12,7 @@ const Blogs = () => {
               Our Blogs
             </h2>
             <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-              We use an agile approach to test assumptions and connect with the
-              needs of your audience early and often.
+              We write about react js concept that is mostly uses.
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">
@@ -30,8 +31,8 @@ const Blogs = () => {
                 </span>
                 <span className="text-sm">14 days ago</span>
               </div>
-              <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <a href="#">How to quickly deploy a static website</a>
+              <h2 className="mb-2 text-2xl font-bold link-hover tracking-tight text-gray-900 dark:text-white">
+                <Link to="#">Tell us the differences between uncontrolled and controlled components.</Link>
               </h2>
               <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
                 Static websites are now used to bootstrap lots of websites and
