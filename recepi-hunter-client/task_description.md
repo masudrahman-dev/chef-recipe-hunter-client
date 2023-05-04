@@ -103,7 +103,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
    > Hint: Google `React Awesome components`, go to the GitHub repo, find `react-lazy-load`, and try it. Alternatively, you can try any other package as well.
 
-1. 0 = FUN: The Blogs page, Create a heading and add an icon/ button. When you click on that button, it will create a pdf and will be downloaded ( This will give you some fun. Try out this after completing all of your tasks. Hint: Explore `react-to-pdf` package). Your pdf should contain some information about the Blogs page.
+1. 1 = FUN: The Blogs page, Create a heading and add an icon/ button. When you click on that button, it will create a pdf and will be downloaded ( This will give you some fun. Try out this after completing all of your tasks. Hint: Explore `react-to-pdf` package). Your pdf should contain some information about the Blogs page.
 
 1. 1 = Make sure your site looks reasonable. The design and color selection is meaningful.
 
