@@ -18,7 +18,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
    > Make sure that the navbar and footer are present on all pages: done
 
-5. 0 = When a user clicks on the signin button, they will be redirected to the signin page having the following:
+5. 1 = When a user clicks on the signin button, they will be redirected to the signin page having the following:
 
    - Email/Password
    - Google Sign-in

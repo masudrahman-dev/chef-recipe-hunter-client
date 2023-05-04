@@ -65,10 +65,6 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const googleRedirect = () => {
-    return getRedirectResult(auth);
-  };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("auth.currentUser :>> ", auth.currentUser);
@@ -87,7 +83,7 @@ const AuthProvider = ({ children }) => {
     updateUser,
     GoogleSignIn,
     GithubSignIn,
-    googleRedirect,
+
     logIn,
     logOut,
     user,

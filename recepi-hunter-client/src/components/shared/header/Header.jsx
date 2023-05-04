@@ -7,7 +7,7 @@ import "./Header.css";
 const Header = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const [isUserOpen, setIsUserOpen] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   // console.log('loading :>> ', loading);
 
   const navigate = useNavigate();

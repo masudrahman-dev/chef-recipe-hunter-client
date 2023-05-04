@@ -5,7 +5,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  // const [user, setUser] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const { registerUser, updateUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
@@ -14,7 +14,13 @@ const Register = () => {
     const photo = form.url.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    // console.log(name, email, password);
+
+    if (!/^.{6,}$/.test(password)) {
+      setErrorMessage("Password must be at least 6 characters long.");
+    } else {
+      setErrorMessage("");
+    }
     registerUser(email, password)
       .then((userCredential) => {
         // Signed in
@@ -134,6 +140,7 @@ const Register = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
+                  <p className="text-rose-600 mt-3">{errorMessage}</p>
                 </div>
 
                 <div className="flex items-start">

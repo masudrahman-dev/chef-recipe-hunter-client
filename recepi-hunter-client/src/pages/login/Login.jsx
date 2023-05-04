@@ -7,23 +7,21 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  const { logIn, GoogleSignIn, GithubSignIn, googleRedirect, user } =
-    useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState("");
+  const { logIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  // console.log("login page location", location);
-  const from = location.state?.from?.pathname || "/";
-
-  // console.log("from :>> ", from);
   const handleLogin = (e) => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    if (!/^.{6,}$/.test(password)) {
+      setErrorMessage("Password must be at least 6 characters long.");
+    } else {
+      setErrorMessage("");
+    }
     logIn(email, password)
       .then((userCredential) => {
         // Signed in
-        navigate(from, { replace: true });
         const user = userCredential.user;
         console.log("Log in successful");
       })
@@ -58,34 +56,6 @@ const Login = () => {
         console.log(error);
       });
   };
-  // useEffect(() => {
-  //   console.log("user :>> ", user);
-  // }, []);
-
-  // const handleGoogleRedirect = () => {
-  //   googleRedirect()
-  //     .then((result) => {
-  //       // This gives you a Google Access Token. You can use it to access Google APIs.
-  //       const credential = GoogleAuthProvider.credentialFromResult(result);
-  //       const token = credential.accessToken;
-
-  //       // The signed-in user info.
-  //       const user = result.user;
-  //       // IdP data available using getAdditionalUserInfo(result)
-  //       // ...
-  //       console.log("user :>> ", user);
-  //     })
-  //     .catch((error) => {
-  //       // Handle Errors here.
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // The email of the user's account used.
-  //       const email = error?.customData?.email;
-  //       // The AuthCredential type that was used.
-  //       const credential = GoogleAuthProvider.credentialFromError(error);
-  //       // ...
-  //     });
-  // };
 
   return (
     <div>
@@ -159,6 +129,7 @@ const Login = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
+                  <p className="text-rose-600 mt-3">{errorMessage}</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-start">
