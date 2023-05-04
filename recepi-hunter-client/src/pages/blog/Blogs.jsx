@@ -1,6 +1,7 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
-import Blog from "./Blog";
+
 const Blogs = () => {
   return (
     <div>

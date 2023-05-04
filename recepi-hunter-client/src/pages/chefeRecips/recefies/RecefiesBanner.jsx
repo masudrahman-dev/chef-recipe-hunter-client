@@ -32,7 +32,7 @@ const RecefiesBanner = ({ data }) => {
               </div>
             </div>
             <div >
-              <LazyLoad width={762} threshold={0.95}>
+              <LazyLoad  threshold={0.95}>
                 <img
                   className="w-full rounded-lg  "
                   src={chef_image || chefe_image}

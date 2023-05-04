@@ -8,11 +8,11 @@ const App = () => {
     // <div className=" flex flex-col min-h-screen ">
     <div className=" relative min-h-screen">
       <Header></Header>
+      
       <Outlet />
       <div className=" pb-12">
         <div className="absolute bottom-0 w-full h-12">
-
-        <Footer></Footer>
+          <Footer></Footer>
         </div>
       </div>
     </div>

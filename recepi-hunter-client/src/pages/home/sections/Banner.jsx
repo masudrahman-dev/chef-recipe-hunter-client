@@ -92,7 +92,7 @@ const Banner = () => {
             </Link>
           </div>
           <div className="hidden  lg:mt-0 lg:col-span-5 lg:flex">
-            {/* <LazyLoad height={762}></LazyLoad> */}
+           
             <LazyLoad   threshold={0.95}>
               <img className="rounded-lg" src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/promotion-1.jpg" />
             </LazyLoad>

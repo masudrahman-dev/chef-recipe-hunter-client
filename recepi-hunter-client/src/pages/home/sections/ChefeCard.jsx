@@ -12,7 +12,7 @@ const ChefeCard = ({ card }) => {
       <div className=" bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className=" flex justify-center">
           <div className="my-10 flex flex-col items-center">
-            <LazyLoad height={150} width={150} threshold={0.95}>
+            <LazyLoad  threshold={0.95}>
               <img
                 className="w-36 h-36 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 "
                 src={
