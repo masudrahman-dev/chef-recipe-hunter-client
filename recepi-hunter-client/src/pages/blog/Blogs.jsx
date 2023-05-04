@@ -1,10 +1,23 @@
 import React from "react";
-
+import { jsPDF } from "jspdf";
 import { Link } from "react-router-dom";
 
 const Blogs = () => {
+  const generatePdf = () => {
+    // Default export is a4 paper, portrait, using millimeters for units
+    const doc = new jsPDF();
+
+    doc.text("p", 10, 10);
+    doc.save("untitled.pdf");
+  };
+
   return (
     <div>
+      <div className="text-center">
+        <button onClick={generatePdf} className="btn btn-primary  ">
+          Generate PDF
+        </button>
+      </div>
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">

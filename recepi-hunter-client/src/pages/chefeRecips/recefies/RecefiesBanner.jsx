@@ -17,28 +17,30 @@ const RecefiesBanner = ({ data }) => {
     <div>
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-          <div className=" grid grid-cols-2 items-center gap-7  ">
-            <div className="">
-              <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
-                {name}
-              </h1>
-              <p className="mb-8 text-lg  text-gray-500   dark:text-gray-400">
-                {about}
-              </p>
+          <div className="   ">
+            <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-7">
               <div>
-                <p>likes : {likes} K</p>
-                <p>number of recipes : {total_recefie} pics</p>
-                <p>years of experience : {year_of_experience} years</p>
+                <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+                  {name}
+                </h1>
+                <p className="mb-8 text-lg  text-gray-500   dark:text-gray-400">
+                  {about}
+                </p>
+                <div>
+                  <p>likes : {likes} K</p>
+                  <p>number of recipes : {total_recefie} pics</p>
+                  <p>years of experience : {year_of_experience} years</p>
+                </div>
               </div>
-            </div>
-            <div >
-              <LazyLoad  threshold={0.95}>
-                <img
-                  className="w-full rounded-lg  "
-                  src={chef_image || chefe_image}
-                  alt=""
-                />
-              </LazyLoad>
+              <div>
+                <LazyLoad threshold={0.95}>
+                  <img
+                    className="w-full rounded-lg  "
+                    src={chef_image || chefe_image}
+                    alt=""
+                  />
+                </LazyLoad>
+              </div>
             </div>
           </div>
         </div>
