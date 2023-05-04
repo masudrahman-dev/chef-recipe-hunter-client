@@ -7,6 +7,31 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { registerUser, updateUser } = useContext(AuthContext);
+  const { GoogleSignIn, GithubSignIn } = useContext(AuthContext);
+
+  const handleGoogleSignIn = () => {
+    GoogleSignIn()
+      .then((result) => {
+        const loggedInUser = result.user;
+        // setUser(loggedInUser);
+        // console.log(loggedInUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    GithubSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        // console.log(loggedUser);
+        // setUser(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const handleRegister = (e) => {
     const form = e.target;
@@ -62,20 +87,24 @@ const Register = () => {
                 className="space-y-4 md:space-y-6"
               >
                 <div className="font-medium flex flex-col gap-3  text-gray-900 dark:text-white ">
-                  <Link
+                  <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
                     to="/register"
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     <FaGoogle />
                     <p>Register with Google</p>
-                  </Link>
-                  <Link
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleGithubSignIn}
                     to="/register"
                     className="inline-flex justify-center items-center gap-3 border p-3   md:text-xl w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     <FaGithub />
                     <p>Register with Github</p>
-                  </Link>
+                  </button>
                 </div>
                 <div>
                   <label

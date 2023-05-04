@@ -5,20 +5,27 @@ import { Link } from "react-router-dom";
 const Blogs = () => {
   const generatePdf = () => {
     // Default export is a4 paper, portrait, using millimeters for units
-    const doc = new jsPDF();
-
-    doc.text("p", 10, 10);
-    doc.save("untitled.pdf");
+    let doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#pdf"), {
+      callback: function () {
+        doc.save("untitled.pdf");
+      },
+    });
+    // doc.text("p", 10, 10);
   };
 
   return (
     <div>
       <div className="text-center">
-        <button onClick={generatePdf} className="btn btn-primary  ">
+        <button
+          onClick={generatePdf}
+          type="button"
+          className="btn btn-primary  "
+        >
           Generate PDF
         </button>
       </div>
-      <section className="bg-white dark:bg-gray-900">
+      <section id="container" className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
             <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">

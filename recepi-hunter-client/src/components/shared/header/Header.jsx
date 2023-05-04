@@ -49,9 +49,9 @@ const Header = () => {
   // console.log("user :>> ", user);
   // console.log(displayName,email,photoURL);
   return (
-    <div className="mb-12">
+    <div className="mb-12 ">
       <nav className="bg-white border-gray-200 dark:bg-gray-900 py-5 ">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4  ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border ">
           <Link to="/" className="flex items-center">
             <img
               className="w-8 h-8 mr-2"
