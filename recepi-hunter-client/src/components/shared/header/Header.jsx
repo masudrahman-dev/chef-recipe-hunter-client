@@ -1,6 +1,6 @@
 import { Collapse } from "flowbite";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { Button, Spinner } from "flowbite-react";
 import "./Header.css";
@@ -9,6 +9,16 @@ const Header = () => {
   const [isUserOpen, setIsUserOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // console.log('loading :>> ', loading);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  // console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    navigate(from, { replace: true });
+  }, [user]);
+
   if (!loading) {
     return (
       <div className="">

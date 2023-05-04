@@ -1,56 +1,25 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-} from "firebase/auth";
-import app from "../../utils/firebase/firebase.config";
+import { GoogleAuthProvider } from "firebase/auth";
+
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
-
-  const auth = getAuth(app);
-  const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
-
-  const handleGoogleSignIn = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        const loggedInUser = result.user;
-        console.log(loggedInUser);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleGithubSignIn = () => {
-    signInWithPopup(auth, githubProvider)
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        // setUser(loggedUser);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  const { logIn, GoogleSignIn, GithubSignIn, googleRedirect, user } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
   // console.log("login page location", location);
   const from = location.state?.from?.pathname || "/";
+
   // console.log("from :>> ", from);
   const handleLogin = (e) => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(email, password);
     logIn(email, password)
       .then((userCredential) => {
         // Signed in
@@ -65,7 +34,59 @@ const Login = () => {
 
     e.preventDefault();
   };
-  // console.log(user);
+
+  const handleGoogleSignIn = () => {
+    GoogleSignIn()
+      .then((result) => {
+        const loggedInUser = result.user;
+        // setUser(loggedInUser);
+        // console.log(loggedInUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    GithubSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        // console.log(loggedUser);
+        // setUser(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  // useEffect(() => {
+  //   console.log("user :>> ", user);
+  // }, []);
+
+  // const handleGoogleRedirect = () => {
+  //   googleRedirect()
+  //     .then((result) => {
+  //       // This gives you a Google Access Token. You can use it to access Google APIs.
+  //       const credential = GoogleAuthProvider.credentialFromResult(result);
+  //       const token = credential.accessToken;
+
+  //       // The signed-in user info.
+  //       const user = result.user;
+  //       // IdP data available using getAdditionalUserInfo(result)
+  //       // ...
+  //       console.log("user :>> ", user);
+  //     })
+  //     .catch((error) => {
+  //       // Handle Errors here.
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       // The email of the user's account used.
+  //       const email = error?.customData?.email;
+  //       // The AuthCredential type that was used.
+  //       const credential = GoogleAuthProvider.credentialFromError(error);
+  //       // ...
+  //     });
+  // };
+
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">

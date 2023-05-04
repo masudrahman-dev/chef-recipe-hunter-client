@@ -2,10 +2,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { createContext, useEffect, useState } from "react";
 import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
+  getRedirectResult,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -27,7 +31,6 @@ const AuthProvider = ({ children }) => {
     setName(name);
     setPhoto(photo);
   };
-
   updateProfile(auth.currentUser, {
     displayName: name,
     photoURL: photo,
@@ -40,39 +43,30 @@ const AuthProvider = ({ children }) => {
       // An error occurred
       // ...
     });
+  const logOut = () => {
+    return signOut(auth);
+  };
+
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const GoogleSignIn = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
+
+  const GithubSignIn = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  };
 
   const logIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // const LogInWithGoogle = () => {
-
-  //   signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       // This gives you a Google Access Token. You can use it to access the Google API.
-  //       const credential = GoogleAuthProvider.credentialFromResult(result);
-  //       const token = credential.accessToken;
-  //       // The signed-in user info.
-  //       const user = result.user;
-  //       // IdP data available using getAdditionalUserInfo(result)
-  //       // ...
-  //       console.log('user :>> ', user);
-  //     })
-  //     .catch((error) => {
-  //       // Handle Errors here.
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // The email of the user's account used.
-  //       const email = error.customData.email;
-  //       // The AuthCredential type that was used.
-  //       const credential = GoogleAuthProvider.credentialFromError(error);
-  //       // ...
-  //     });
-  // };
-
-  const logOut = () => {
-    return signOut(auth);
+  const googleRedirect = () => {
+    return getRedirectResult(auth);
   };
 
   useEffect(() => {
@@ -91,13 +85,14 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     registerUser,
     updateUser,
+    GoogleSignIn,
+    GithubSignIn,
+    googleRedirect,
     logIn,
     logOut,
-    // LogInWithGoogle,
     user,
     loading,
   };
-  // console.log("user :>> ", user);
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
