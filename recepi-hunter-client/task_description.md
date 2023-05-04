@@ -87,7 +87,7 @@ Create a website that shows the recipes of all available chefs. The website must
 
 1. 1 = Make your website home page mobile & desktop responsive (tablet responsive is optional)
 
-1. 0 = Create a `Blogss` page route where you will have to answer the following questions
+1. 1 = Create a `Blogss` page route where you will have to answer the following questions
 
    1. Tell us the differences between uncontrolled and controlled components.
 
