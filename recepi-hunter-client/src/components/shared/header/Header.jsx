@@ -70,7 +70,7 @@ const Header = () => {
                 <span className="sr-only">Open user menu</span>
                 <img
                   className="w-8 h-8 rounded-full"
-                  src={user?.photoURL || "don't have photo"}
+                  src={user?.photoURL}
                   alt="user photo"
                 />
               </button>
