@@ -16,7 +16,7 @@ const Header = () => {
   const from = location.state?.from?.pathname;
 
   useEffect(() => {
-    console.log("from :>> ", from);
+    // console.log("from :>> ", from);
     if (from) {
       navigate(from, { replace: true });
     }
