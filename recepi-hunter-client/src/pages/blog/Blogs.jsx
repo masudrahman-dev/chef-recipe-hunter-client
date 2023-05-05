@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 const Blogs = () => {
   const generatePdf = () => {
     // Default export is a4 paper, portrait, using millimeters for units
-    let doc = new jsPDF("p", "pt", "a4");
-    doc.html(document.querySelector("#pdf"), {
-      callback: function () {
-        doc.save("untitled.pdf");
-      },
-    });
-    // doc.text("p", 10, 10);
+    let doc = new jsPDF();
+    // doc.html(document.querySelector("#pdf"), {
+    //   callback: function () {
+    //   },
+    // });
+    doc.text("p", 10, 10);
+    doc.save("untitled.pdf");
   };
 
   return (

@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import LazyLoad from "react-lazy-load";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const RecefiesBanner = ({ data }) => {
   const {
@@ -33,13 +35,12 @@ const RecefiesBanner = ({ data }) => {
                 </div>
               </div>
               <div>
-                <LazyLoad threshold={0.95}>
-                  <img
-                    className="w-full rounded-lg  "
-                    src={chef_image || chefe_image}
-                    alt=""
-                  />
-                </LazyLoad>
+                <LazyLoadImage
+                  className="rounded-lg"
+                  effect="blur"
+                  src={chef_image || chefe_image}
+                  alt="slide image"
+                />
               </div>
             </div>
           </div>

@@ -9,6 +9,12 @@ import { GoogleAuthProvider } from "firebase/auth";
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { logIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
+  // const navigate = useNavigate();
+  // const from = location.state?.from?.pathname || "/";
+
+
+
+
 
   const handleLogin = (e) => {
     const form = e.target;
@@ -18,6 +24,8 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        // navigate(location.state?.from?.pathname || "/");
+
         console.log("Log in successful");
       })
       .catch((error) => {

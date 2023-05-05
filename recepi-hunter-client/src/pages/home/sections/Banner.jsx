@@ -1,60 +1,12 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
-import LazyLoad from "react-lazy-load";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Banner = () => {
   return (
     <div>
-      {/* <section className="bg-white dark:bg-gray-900">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-          <div className=" grid grid-cols-2 items-center gap-7 ">
-            <div className="">
-              <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
-                We invest in the world’s potential
-              </h1>
-              <p className="mb-8 text-lg  text-gray-500   dark:text-gray-400">
-                Here at Flowbite we focus on markets where technology,
-                innovation, and capital can unlock long-term value and drive
-                economic growth.
-              </p>
-              <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                <a
-                  href="#"
-                  className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-                >
-                  Get started
-                  <svg
-                    aria-hidden="true"
-                    className="ml-2 -mr-1 w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                >
-                  Learn more
-                </a>
-              </div>
-            </div>
-            <div className="border">
-              <img
-                className="w-full"
-                src="https://source.unsplash.com/user/c_v_r/1600x900"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="bg-white dark:bg-gray-900">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7 text-center">
@@ -92,10 +44,11 @@ const Banner = () => {
             </Link>
           </div>
           <div className="hidden  lg:mt-0 lg:col-span-5 lg:flex">
-           
-            <LazyLoad   threshold={0.95}>
-              <img className="rounded-lg" src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/promotion-1.jpg" />
-            </LazyLoad>
+            <LazyLoadImage
+              className="rounded-lg"
+              effect="blur"
+              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/promotion-1.jpg"
+            />
           </div>
         </div>
       </section>

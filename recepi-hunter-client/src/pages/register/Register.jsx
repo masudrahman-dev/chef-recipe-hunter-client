@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
@@ -8,6 +8,17 @@ const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { registerUser, updateUser } = useContext(AuthContext);
   const { GoogleSignIn, GithubSignIn } = useContext(AuthContext);
+
+  // const navigate = useNavigate();
+  // const from = location.state?.from?.pathname || '/';
+  // const location = useLocation();
+  // // console.log("login page location", location);
+
+  // useEffect(() => {
+  //   if (from) {
+  //     navigate(from, { replace: true });
+  //   }
+  // }, []);
 
   const handleGoogleSignIn = () => {
     GoogleSignIn()
