@@ -13,8 +13,8 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   // console.log("login page location", location);
-  const from = location.state?.from?.pathname ;
-console.log('from :>> ', from);
+  const from = location.state?.from?.pathname;
+  // console.log('from :>> ', from);
   useEffect(() => {
     // console.log("from :>> ", from);
     if (from) {

@@ -1,19 +1,16 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
-  getRedirectResult,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
-import app from "../utils/firebase/firebase.config";
+import app from "../contexts/firebase/firebase.config";
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 

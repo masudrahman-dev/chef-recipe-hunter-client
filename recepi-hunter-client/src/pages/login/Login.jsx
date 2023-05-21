@@ -1,20 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { logIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
-  // const navigate = useNavigate();
-  // const from = location.state?.from?.pathname || "/";
-
-
-
-
 
   const handleLogin = (e) => {
     const form = e.target;
@@ -24,7 +17,6 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // navigate(location.state?.from?.pathname || "/");
 
         console.log("Log in successful");
       })
