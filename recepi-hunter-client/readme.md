@@ -1,4 +1,7 @@
 # About My Project
+## [Visit Live site](https://recepi-hunter-client.web.app/)
+## [Server repo](https://github.com/masudrahman-dev/chef-recipe-hunter-server.git)
+
 
 ## Project Name : Chefe Hunter
 
@@ -35,4 +38,3 @@
 2. Express js
 3. Nodemon
 
-### [Visit Live site](https://recepi-hunter-client.web.app/)
